@@ -16,12 +16,15 @@ function compute() {
     var d = new Date();
     var interest_year = d.getFullYear() + years;
 
-    result = "If you deposit <mark>" + amount + "</mark>, </br>" +
-             "at an interest rate of <mark>" + rate + "%</mark>. </br>" +
-             "You will receive an amount of <mark>" + interest + "</mark>, </br>" +
-             "in the year <mark>" + interest_year + "</mark>";
-
-    document.getElementById("result").innerHTML = result;
+    if (amount >= 1) {
+        result = "If you deposit <mark>" + amount + "</mark>, </br>" +
+        "at an interest rate of <mark>" + rate + "%</mark>. </br>" +
+        "You will receive an amount of <mark>" + interest + "</mark>, </br>" +
+        "in the year <mark>" + interest_year + "</mark>";
+    } else {
+        alert("Please insert Positive Number.");
+        document.querySelector("#principal").focus();
+    }
     
 }
         
